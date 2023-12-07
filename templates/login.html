@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+    Log in
+{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for message in messages %}
+        <h1>{{message}}</h1>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+    <form action="#" method="post">
+        <div class="mb-3">
+            <label for="Username" class="form-label">Username</label>
+            <input type="user" name="user" class="form-control" id="Username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="mail" class="form-label">Email</label>
+            <input type="email" name="mail" class="form-control" id="mail" aria-describedby="emailHelp">
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+{% endblock %}
